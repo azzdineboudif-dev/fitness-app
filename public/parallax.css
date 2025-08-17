@@ -1,9 +1,26 @@
-/* Effet Parallax */
+/* --- Parallax background (fallback vanilla) --- */
 .parallax {
-  background-image: url('https://picsum.photos/1920/1080'); /* remplace par ton image */
+  position: relative;
   height: 100vh;
-  background-attachment: fixed;
+  /* Mets le bon chemin d'image : on a vu dans tes DevTools: /fitness-app/assets/hero-banner-DJ5lYLMO.jpg */
+  background-image: url('/fitness-app/assets/hero-banner-DJ5lYLMO.jpg');
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+
+  /* fallback simple quand JS est inactif */
+  background-attachment: fixed;
+
+  will-change: transform;
+}
+
+/* éléments qui bougent à vitesses différentes (utilisés par le JS de fallback) */
+.parallax-item {
+  will-change: transform, opacity;
+  transition: transform 0.06s linear, opacity 0.2s ease-out;
+}
+
+/* léger fondu optionnel si la classe est présente */
+.parallax-fade {
+  opacity: 1;
 }
