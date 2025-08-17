@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import heroBanner from '../assets/images/hero-banner.jpg';
+// heroBanner import supprimé (l'image de fond est gérée par parallax.css)
+// import heroBanner from '../assets/images/hero-banner.jpg';
 import '../App.css';
 
 const Header = () => {
@@ -31,31 +32,31 @@ const Header = () => {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-8">
-              <button 
+              <button
                 onClick={() => scrollToSection('accueil')}
                 className="text-white hover:text-[var(--fitness-orange)] transition-colors duration-300"
               >
                 Accueil
               </button>
-              <button 
+              <button
                 onClick={() => scrollToSection('apropos')}
                 className="text-white hover:text-[var(--fitness-orange)] transition-colors duration-300"
               >
                 À Propos
               </button>
-              <button 
+              <button
                 onClick={() => scrollToSection('services')}
                 className="text-white hover:text-[var(--fitness-orange)] transition-colors duration-300"
               >
                 Services
               </button>
-              <button 
+              <button
                 onClick={() => scrollToSection('temoignages')}
                 className="text-white hover:text-[var(--fitness-orange)] transition-colors duration-300"
               >
                 Témoignages
               </button>
-              <button 
+              <button
                 onClick={() => scrollToSection('contact')}
                 className="text-white hover:text-[var(--fitness-orange)] transition-colors duration-300"
               >
@@ -78,31 +79,31 @@ const Header = () => {
           {isMenuOpen && (
             <div className="md:hidden bg-black/90 backdrop-blur-sm rounded-lg mt-2 p-4">
               <div className="flex flex-col space-y-4">
-                <button 
+                <button
                   onClick={() => scrollToSection('accueil')}
                   className="text-white hover:text-[var(--fitness-orange)] transition-colors duration-300 text-left"
                 >
                   Accueil
                 </button>
-                <button 
+                <button
                   onClick={() => scrollToSection('apropos')}
                   className="text-white hover:text-[var(--fitness-orange)] transition-colors duration-300 text-left"
                 >
                   À Propos
                 </button>
-                <button 
+                <button
                   onClick={() => scrollToSection('services')}
                   className="text-white hover:text-[var(--fitness-orange)] transition-colors duration-300 text-left"
                 >
                   Services
                 </button>
-                <button 
+                <button
                   onClick={() => scrollToSection('temoignages')}
                   className="text-white hover:text-[var(--fitness-orange)] transition-colors duration-300 text-left"
                 >
                   Témoignages
                 </button>
-                <button 
+                <button
                   onClick={() => scrollToSection('contact')}
                   className="text-white hover:text-[var(--fitness-orange)] transition-colors duration-300 text-left"
                 >
@@ -115,29 +116,35 @@ const Header = () => {
       </nav>
 
       {/* Hero Banner */}
-      <div 
+      <div
         id="accueil"
-        className="relative h-screen bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBanner})` }}
+        className="parallax relative h-screen bg-cover bg-center bg-no-repeat"
       >
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/50"></div>
-        
+
         {/* Hero Content */}
         <div className="relative z-10 flex items-center justify-center h-full">
           <div className="text-center text-white max-w-4xl mx-auto px-4">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in-up">
-              Atteignez Vos 
+            <h1
+              className="parallax-item text-5xl md:text-7xl font-bold mb-6 animate-fade-in-up"
+              data-speed="0.2"
+            >
+              Atteignez Vos
               <span className="block" style={{ color: 'var(--fitness-orange)' }}>
                 Objectifs Fitness
               </span>
             </h1>
-            <p className="text-xl md:text-2xl mb-8 animate-fade-in-up animation-delay-300">
+            <p
+              className="parallax-item text-xl md:text-2xl mb-8 animate-fade-in-up animation-delay-300"
+              data-speed="0.3"
+            >
               Entraînement personnalisé, résultats garantis.
             </p>
-            <button 
+            <button
               onClick={() => scrollToSection('contact')}
-              className="bg-[var(--fitness-orange)] hover:bg-[var(--fitness-orange)]/90 text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 animate-fade-in-up animation-delay-600"
+              className="parallax-item parallax-fade bg-[var(--fitness-orange)] hover:bg-[var(--fitness-orange)]/90 text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 animate-fade-in-up animation-delay-600"
+              data-speed="0.4"
             >
               Commencez Votre Transformation
             </button>
@@ -149,4 +156,3 @@ const Header = () => {
 };
 
 export default Header;
-
