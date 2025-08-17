@@ -1,9 +1,30 @@
-/* Effet Parallax */
+/* ============================
+   Effet Parallaxe Global
+   ============================ */
+
 .parallax {
-  background-image: url('https://picsum.photos/1920/1080'); /* remplace par ton image */
-  height: 100vh;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* ============================
+   Animations Douces
+   ============================ */
+[data-speed] {
+  transition: transform 0.2s linear, opacity 0.3s ease-out;
+}
+
+/* ============================
+   Textes & Boutons
+   ============================ */
+.parallax h1,
+.parallax p,
+.parallax button {
+  position: relative;
+  z-index: 2;
+  will-change: transform, opacity;
 }
