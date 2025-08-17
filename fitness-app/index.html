@@ -4,12 +4,23 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fitness Landing - Atteignez Vos Objectifs</title>
+    <title>Fitness Landing – Atteignez Vos Objectifs</title>
+
+    <!-- Feuille de style du parallaxe (public/parallax.css) -->
     <link rel="stylesheet" href="/parallax.css" />
   </head>
+
   <body>
+    <!-- Calque de fond pour l'image avec effet parallaxe -->
     <div class="parallax"></div>
-   <div id="root"></div>
+
+    <!-- App React -->
+    <div id="root"></div>
+
+    <!-- Bundle Vite/React -->
     <script type="module" src="/src/main.jsx"></script>
+
+    <!-- Script de secours parallaxe vanilla (public/parallax.js) -->
+    <script src="/parallax.js"></script>
   </body>
 </html>
