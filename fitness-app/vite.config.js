@@ -5,10 +5,14 @@ import path from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(),tailwindcss()],
+  // IMPORTANT pour GitHub Pages : le nom EXACT de ton dépôt
+  base: '/fitness-app/',
+
+  plugins: [react(), tailwindcss()],
+
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      '@': path.resolve(__dirname, './src'),
     },
   },
 })
