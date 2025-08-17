@@ -20,19 +20,25 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Node + pnpm (ton dépôt a un pnpm-lock.yaml)
+      # Node + pnpm
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
-      - run: corepack enable
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm build
+          cache: pnpm
 
-      # Publie le dossier dist/ produit par Vite
+      - run: corepack enable
+
+      # ⬇️ IMPORTANT : on travaille dans le sous-dossier "fitness-app"
+      - run: pnpm install --frozen-lockfile
+        working-directory: ./fitness-app
+
+      - run: pnpm build
+        working-directory: ./fitness-app
+
+      # Publier le dossier dist généré dans le sous-dossier
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./fitness-app/dist
 
   deploy:
     needs: build
