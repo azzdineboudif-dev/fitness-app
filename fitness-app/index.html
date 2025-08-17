@@ -1,27 +1,25 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="fr">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fitness Landing – Atteignez Vos Objectifs</title>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Site FitnessPro avec effet Parallaxe"
+    />
 
-    <!-- Feuille de style du parallaxe (dans /public) -->
-    <!-- IMPORTANT: pas de slash au début -> chemin relatif -->
-    <link rel="stylesheet" href="parallax.css" />
+    <title>FitnessPro</title>
+
+    <!-- Appel du CSS Parallaxe -->
+    <link rel="stylesheet" href="%PUBLIC_URL%/parallax.css" />
   </head>
   <body>
-    <!-- Calque de fond pour l'effet parallaxe (le hero React a la classe .parallax) -->
-    <div class="parallax"></div>
-
-    <!-- App React -->
+    <noscript>Vous devez activer JavaScript pour voir ce site.</noscript>
     <div id="root"></div>
 
-    <!-- Bundle Vite/React (la build remplacera ce chemin automatiquement) -->
-    <script type="module" src="/src/main.jsx"></script>
-
-    <!-- Script de secours parallaxe vanilla (dans /public) -->
-    <!-- IMPORTANT: pas de slash au début -> chemin relatif -->
-    <script src="parallax.js"></script>
+    <!-- Appel du JS Parallaxe -->
+    <script src="%PUBLIC_URL%/parallax.js"></script>
   </body>
 </html>
