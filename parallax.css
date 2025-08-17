@@ -1,0 +1,10 @@
+/* Effet Parallax */
+.parallax {
+  background-image: url('https://picsum.photos/1920/1080'); /* remplace par ton image */
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+Arrête
